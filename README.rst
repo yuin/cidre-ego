@@ -23,6 +23,8 @@ Usage
 
 Create ego templates and run the `ego` command.
 
+.. code-block::
+
     <%! func ShowItems(w io.Writer, items []string) error %>
     <%% import "strings" %%>
     <%% import "github.com/yuin/cidre-ego" %%>
@@ -32,6 +34,8 @@ Create ego templates and run the `ego` command.
           <% } %>
         </ul>
     <% ego.EgoLayout(w, MyLayout) %>
+
+.. code-block::
 
     <%! func MyLayout(w io.Writer, contents string) error %>
         <html><body>
