@@ -1,0 +1,16 @@
+<%! func UserView(w io.Writer, u *User) error %>
+
+<%% import "strings" %%>
+
+<html>
+  <body>
+    <h1>Hello <%= strings.TrimSpace(u.FirstName) %>!</h1>
+
+    <p>Here's a list of your favorite colors:</p>
+    <ul>
+      <% for _, colorName := range u.FavoriteColors { %>
+        <li><%= colorName %></li>
+      <% } %>
+    </ul>
+  </body>
+</html>

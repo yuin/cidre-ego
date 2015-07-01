@@ -1,0 +1,14 @@
+<%! func MyContents(w io.Writer, u *User) error %>
+
+<%% import "strings" %%>
+
+    <h1>Hello <%= strings.TrimSpace(u.FirstName) %>!</h1>
+
+    <p>Here's a list of your favorite colors:</p>
+    <ul>
+      <% for _, colorName := range u.FavoriteColors { %>
+        <li><%= colorName %></li>
+      <% } %>
+    </ul>
+
+<% EgoLayout(w, MyLayout) %>

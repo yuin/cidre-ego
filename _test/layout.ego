@@ -1,0 +1,7 @@
+<%! func MyLayout(w io.Writer, contents string) error %>
+
+<html>
+  <body>
+     <%== contents %>
+  </body>
+</html>
