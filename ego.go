@@ -9,7 +9,7 @@ import (
 )
 
 type EgoRenderer struct {
-	cidre.BaseRenderer
+	*cidre.BaseRenderer
 }
 
 type egoWriter struct {
@@ -29,7 +29,10 @@ func (e *egoWriter) Write(p []byte) (int, error) {
 }
 
 func NewEgoRenderer() *EgoRenderer {
-	return &EgoRenderer{}
+	return &EgoRenderer{&cidre.BaseRenderer{}}
+}
+
+func (r *EgoRenderer) Compile(){
 }
 
 func (r *EgoRenderer) RenderTemplateFile(w io.Writer, name string, value interface{}) {
